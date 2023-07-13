@@ -18,7 +18,7 @@ function ModalLayout(props) {
         console.log(mText);
     }
 
-    const onChangeBtn = () => {
+    const onSubmit = () => {
         setShowForm(false);
         let titlecopy = [...props.title]
         titlecopy[props.titleModal] = mTitle;
@@ -27,8 +27,9 @@ function ModalLayout(props) {
 
         let textcopy = [...props.text]
         textcopy[props.textModal] = mText;
-        console.log(textcopy[props.textModal]);
+        console.log(props.textModal);
         props.setText(textcopy);
+        console.log(props.text);
     }
 
 
@@ -39,7 +40,7 @@ function ModalLayout(props) {
                 props.setShowModal(!props.showModal)
             }}>닫기</button>
             { showForm == true ? 
-                <form>
+                <form onSubmit={onSubmit}>
                     <p>{props.date}</p>
                     <p>
                         <input type='text' onChange={titleChange} value={mTitle}/>
@@ -47,7 +48,7 @@ function ModalLayout(props) {
                     <p>
                         <textarea onChange={textareaOnChange} value={mText} placeholder='상세내용을 입력하세요'/>
                     </p>
-                    <button onClick={onChangeBtn}>반영</button>
+                    <button type='submit'>반영</button>
                 </form>
                 :
                 <>
