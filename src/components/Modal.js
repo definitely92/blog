@@ -15,21 +15,17 @@ function ModalLayout(props) {
 
     const textareaOnChange = (e) => {
         setMText(e.target.value);
-        console.log(mText);
     }
 
     const onSubmit = () => {
         setShowForm(false);
         let titlecopy = [...props.title]
         titlecopy[props.titleModal] = mTitle;
-        console.log(titlecopy[props.titleModal]);
         props.setTitle(titlecopy);
 
         let textcopy = [...props.text]
         textcopy[props.textModal] = mText;
-        console.log(props.textModal);
         props.setText(textcopy);
-        console.log(props.text);
     }
 
 

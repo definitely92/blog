@@ -40,9 +40,6 @@ const List = () => {
         } else {
             alert('글을 입력해주세요!')
         }
-        if(text) {
-            
-        }
         setDate(dataString +' '+ dayName)
     }
 
